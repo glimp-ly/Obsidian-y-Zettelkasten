@@ -9,14 +9,14 @@ if (!title) {
 const sanitizedTitle = title.replace(/\s+/g, "_");
 const timestamp = tp.date.now("YYYYMMDDHHmmss");
 const createdDate = tp.date.now("YYYY-MM-DD");
-const newFileName = `${sanitizedTitle}`;
+const newFileName = `${timestamp}-${sanitizedTitle}`;
 
 // Contenido de la nueva nota
 const content = `---
-id: ${timestamp}-${sanitizedTitle}
-aliases: ["${title}"]
+id: "${timestamp}"
 created: ${createdDate}
 tags: ["${title}"]
+aliases: ["${title}"]
 ---
 # ${title}
 
